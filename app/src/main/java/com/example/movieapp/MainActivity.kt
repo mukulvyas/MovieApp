@@ -45,6 +45,7 @@ import androidx.compose.ui.graphics.RectangleShape
 import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import com.example.movieapp.model.Movie
 import com.example.movieapp.navigation.MovieNavigation
 import com.example.movieapp.screens.home.MainContent
 import com.example.movieapp.ui.theme.MovieAppTheme
@@ -66,37 +67,6 @@ class MainActivity : ComponentActivity() {
 //class TopAppBarColors
 
 
-@Composable
-fun movieRow(movie : String , onItemClick: (String) -> Unit = {}){
-
-    Card(modifier = Modifier
-        .padding(4.dp)
-        .fillMaxSize()
-        .height(130.dp)
-        .clickable{
-                  onItemClick(movie)
-        }
-        ,
-        shape = RoundedCornerShape(corner = CornerSize(16.dp)),
-        elevation = CardDefaults.elevatedCardElevation(6.dp)
-    ) {
-        Row (verticalAlignment = Alignment.CenterVertically,
-            horizontalArrangement = Arrangement.Start){
-            Surface(modifier = Modifier
-                .padding(12.dp)
-                .size(100.dp),
-                shape = RectangleShape,
-                shadowElevation = 4.dp,
-                tonalElevation = 4.dp
-            )  {
-                Icon(imageVector = Icons.Default.AccountBox, contentDescription = "movie image")
-
-            }
-
-            Text(text = movie)
-        }
-    }
-}
 
 
 
