@@ -52,7 +52,7 @@ import com.example.movieapp.model.getMovies
 @Preview
 @Composable
 
-fun movieRow(movie : Movie = getMovies()[0],
+fun MovieRow(movie : Movie = getMovies()[0],
              onItemClick: (String) -> Unit = {}){
 
     var expanded by remember{

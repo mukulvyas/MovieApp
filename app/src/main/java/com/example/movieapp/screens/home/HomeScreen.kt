@@ -19,7 +19,7 @@ import androidx.navigation.NavController
 import com.example.movieapp.model.Movie
 import com.example.movieapp.model.getMovies
 import com.example.movieapp.navigation.MovieScreens
-import com.example.movieapp.widgets.movieRow
+import com.example.movieapp.widgets.MovieRow
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -56,7 +56,7 @@ fun MainContent(
     Column(modifier = Modifier.padding(15.dp)) {
         LazyColumn{
             items(items = movieList){
-                movieRow(movie = it){movie ->
+                MovieRow(movie = it){movie ->
                     navController.navigate(route = MovieScreens.DetailsScreen.name + "/$movie")
 
                     //Log.d("TAG  ","MainContent : $movie")
